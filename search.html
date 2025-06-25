@@ -17,7 +17,7 @@
             <button type="submit">Search</button>
         </form>
      <hr>
-     <h1>Instrument cable search search</h1>
+     <h1>Instrument cable search</h1>
         <form action="https://www.thomannmusic.com/instrument_cables.html" method="get">
             <div>
                 <label>Sort:</label>
@@ -67,6 +67,36 @@
             </div>
             <div>
                  <button type="submit">Search</button>
+            </div>
+        </form>
+        <hr>
+        <h1>Headphones search</h1>
+        <form action="https://www.thomannmusic.com/headphones_studio_headphones.html" method="get">
+            <div>
+                <p>Replacable cable:</p>
+                <label><input type="radio" value="true" name="feature-50863"> Yes</label>
+                <label><input type="radio" value="false" name="feature-50863"> No</label>
+            </div>
+            <div>
+                <label>Price range</label>
+                <input type="number" min="0" step="0.01" name="price-first" value="0" required>
+                <input type="number" max="184" step="0.01" name="price-last" value="184" required>
+            </div>
+            <div>
+                <label>Availability</label>
+                <input id="in-stock" type="checkbox" value="true" name="vf">
+                <label for="in-stock">In Stock</label>
+            </div>
+            <div>
+                <p>Ratings</p>
+                <label><input type="checkbox" value="5" name="rating[]"> 5</label>
+                <label><input type="checkbox" value="4" name="rating[]"> 4</label>
+                <label><input type="checkbox" value="3" name="rating[]"> 3</label>
+                <label><input type="checkbox" value="2" name="rating[]"> 2</label>
+                <label><input type="checkbox" value="1" name="rating[]"> 1</label>
+            </div>
+            <div>
+                <button type="submit">Search</button>
             </div>
         </form>
     </body>
