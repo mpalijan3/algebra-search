@@ -7,10 +7,16 @@
         <h1>Ecosia search</h1>
         <form action="https://www.ecosia.org/search" method="get">
             <label for="search">Što tražimo?</label>
-            <input id="search" type="text" name="q">
+            <input id="search" type="text" name="q" list="search-suggestions" autocomplete="off" readonly value="test">
+            <datalist id="search-suggestions">
+                    <option value="HTML"></option>
+                    <option value="CSS"></option>
+                    <option value="JavaScript"></option>
+                    <option value="React"></option>
+            </datalist>
             <button type="submit">Search</button>
         </form>
-        <h2>DuckDuckGo Search</h2>
+        <h1>DuckDuckGo Search</h1>
         <form action="https://duckduckgo.com" method="get">
             <label for="pretraga">Što tražimo?</label>
             <input id="pretraga" type="text" name="q">
@@ -33,37 +39,58 @@
                 </select>
             </div>
             <div>
-                <label>Price (from-to)</label>
-                <input type="number" min="0" step="0.01" name="price-first" value="0" required>
-                <input type="number" max="1000" step="0.01" name="price-last" value="1000" required>
+                <fieldset>
+                    <legend>Price range:</legend>
+                    <label>
+                        Minimum:
+                        <input type="number" min="0" step="0.01" name="price-first" value="0" required>
+                    </label>
+                    <label>
+                        Maximum:
+                    <input type="number" max="1000" step="0.01" name="price-last" value="1000" required>
+                    </label>
+                </fieldset>
             </div>
               <div>
-                <label>Length (from-to)</label>
-                <input type="number" min="0" step="0.01" name="feature-57478-first" value="0" required>
-                <input type="number" max="100" step="0.01" name="feature-57478-last" value="100" required>
+                <fieldset>
+                    <legend>Length (m):</legend>
+                        <label>
+                            Minimum:
+                            <input type="number" min="0" step="0.01" name="feature-57478-first" value="0" required>
+                        </label>
+                        <label>
+                            Maximum:
+                            <input type="number" max="100" step="0.01" name="feature-57478-last" value="100" required>
+                        </label>
+                </fieldset>
             </div>
             <div>
-                <label>Range:</label><br>
-                <input type="range" name="feature-57478-first" min="0" max="100" step="1" value="0"/>
-                <input type="range" name="feature-57478-last" min="0" max="100" step="1" value="100"/>
+                    <input type="range" name="feature-57478-first" min="0" max="100" step="1" value="0"/>
+                    <input type="range" name="feature-57478-last" min="0" max="100" step="1" value="100"/>
             </div>
             <div>
-                <input id="in-stock" type="checkbox" value="true" name="vf">
-                <label for="in-stock">In stock</label>
+                    <input id="in-stock" type="checkbox" value="true" name="vf">
+                    <label for="in-stock">In stock</label>
             </div>
             <div>
-                <label><input type="checkbox" value="5" name="rating[]"> 5</label>
-                <label><input type="checkbox" value="4" name="rating[]"> 4</label>
-                <label><input type="checkbox" value="3" name="rating[]"> 3</label>
-                <label><input type="checkbox" value="2" name="rating[]"> 2</label>
-                <label><input type="checkbox" value="1" name="rating[]"> 1</label>
+                <fieldset>
+                    <legend>Rating:</legend>
+                    <label><input type="checkbox" value="5" name="rating[]"> 5</label>
+                    <label><input type="checkbox" value="4" name="rating[]"> 4</label>
+                    <label><input type="checkbox" value="3" name="rating[]"> 3</label>
+                    <label><input type="checkbox" value="2" name="rating[]"> 2</label>
+                    <label><input type="checkbox" value="1" name="rating[]"> 1</label>
+                </fieldset>
             </div>
             <div>
-                <label><input type="checkbox" value="Black" name="feature-45225[]"> Black</label>
-                <label><input type="checkbox" value="Blue" name="feature-45225[]"> Blue</label>
-                <label><input type="checkbox" value="Brown" name="feature-45225[]"> Brown</label>
-                <label><input type="checkbox" value="Gold" name="feature-45225[]"> Gold</label>
-                <label><input type="checkbox" value="Green" name="feature-45225[]"> Green</label>
+                <fieldset>
+                    <legend>Color:</legend>
+                    <label><input type="checkbox" value="Black" name="feature-45225[]"> Black</label>
+                    <label><input type="checkbox" value="Blue" name="feature-45225[]"> Blue</label>
+                    <label><input type="checkbox" value="Brown" name="feature-45225[]"> Brown</label>
+                    <label><input type="checkbox" value="Gold" name="feature-45225[]"> Gold</label>
+                    <label><input type="checkbox" value="Green" name="feature-45225[]"> Green</label>
+                </fieldset>
             </div>
             <div>
                  <button type="submit">Search</button>
@@ -73,32 +100,40 @@
         <h1>Headphones search</h1>
         <form action="https://www.thomannmusic.com/headphones_studio_headphones.html" method="get">
             <div>
-                <p>Replacable cable:</p>
-                <label><input type="radio" value="true" name="feature-50863"> Yes</label>
-                <label><input type="radio" value="false" name="feature-50863"> No</label>
+                <fieldset>
+                    <legend>Replacable cable:</legend>
+                    <label>
+                        Minimum:
+                        <input type="radio" value="true" name="feature-50863"> Yes
+                    </label>
+                    <label>
+                        Maximum:
+                        <input type="radio" value="false" name="feature-50863"> No
+                    </label>
+                </fieldset>
             </div>
             <div>
                 <label>Price range</label>
-                <input type="number" min="0" step="0.01" name="price-first" value="0" required>
-                <input type="number" max="184" step="0.01" name="price-last" value="184" required>
+                    <input type="number" min="0" step="0.01" name="price-first" value="0" required>
+                    <input type="number" max="184" step="0.01" name="price-last" value="184" required>
             </div>
             <div>
                 <label>Availability</label>
-                <input id="dostupno" type="checkbox" value="true" name="vf">
-                <label for="dostupno">In Stock</label>
+                    <input id="dostupno" type="checkbox" value="true" name="vf">
+                    <label for="dostupno">In Stock</label>
             </div>
             <div>
-                <p>Ratings</p>
-                <label><input type="checkbox" value="5" name="rating[]"> 5</label>
-                <label><input type="checkbox" value="4" name="rating[]"> 4</label>
-                <label><input type="checkbox" value="3" name="rating[]"> 3</label>
-                <label><input type="checkbox" value="2" name="rating[]"> 2</label>
-                <label><input type="checkbox" value="1" name="rating[]"> 1</label>
+                <fieldset>
+                    <legend>Ratings:</legend>
+                        <label><input type="checkbox" value="5" name="rating[]"> 5</label>
+                        <label><input type="checkbox" value="4" name="rating[]"> 4</label>
+                        <label><input type="checkbox" value="3" name="rating[]"> 3</label>
+                        <label><input type="checkbox" value="2" name="rating[]"> 2</label>
+                        <label><input type="checkbox" value="1" name="rating[]"> 1</label>
+                </fieldset>
             </div>
             <div>
                 <button type="submit">Search</button>
-            </div>
-            <div>
                 <button type="reset">Reset</button>
             </div>
         </form>
